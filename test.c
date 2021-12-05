@@ -7,9 +7,9 @@ int main()
     int mine;
     void *ptr;
 
-    mine = ft_printf(" %u \n", -9);
-    theirs = printf(" %u \n", -9);
-    //ft_putnbr(theirs);
+    mine = ft_printf(" %p \n", -2147483648);
+    theirs = printf(" %p \n", -2147483648);
+    //ft_putnbr(mine);
     //ptr = "b";
     //mine = ft_printf("%s%d\n", "aaaaa", 22);
     //ft_printf("%%%%\n");

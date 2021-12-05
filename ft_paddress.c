@@ -6,37 +6,35 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 16:16:44 by abaioumy          #+#    #+#             */
-/*   Updated: 2021/12/04 18:12:08 by abaioumy         ###   ########.fr       */
+/*   Updated: 2021/12/05 18:00:16 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_paddress(long nbr)
+static int	ft_hex(unsigned long long n)
 {
-	int	baselen;
-	int	n;
-    char *base;
-    int len;
-    
-	baselen = 16;
-    len = 0;
+	char	*base;
+	int		len;
+
+	len = 0;
 	base = "0123456789abcdef";
-	if (nbr < 0)
+	if (n >= 16)
 	{
-		//ft_putchar('-');
-		nbr *= -1;
+		len += ft_hex(n / 16);
+		len += ft_hex(n % 16);
 	}
-	n = nbr;
-	if (n >= baselen)
-	{
-		ft_paddress(n / baselen);
-		ft_paddress(n % baselen);
-	}
-	if (n < baselen)
-    {
-        len += ft_putstr("0x");
+	if (n < 16)
 		len += ft_putchar(base[n]);
-    }
-    return (len);
+	return (len);
+}
+
+int	ft_paddress(unsigned long long nbr)
+{
+	int	len;
+
+	len = 0;
+	len += ft_putstr("0x");
+	len += ft_hex(nbr);
+	return (len);
 }
