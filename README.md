@@ -1,5 +1,5 @@
 # ft_printf
-##A 1337 (42 Network) project
+## A 1337 (42 Network) project
 
 In this project we were asked to make printf, with the required conversion :
 
