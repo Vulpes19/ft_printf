@@ -6,13 +6,13 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 12:32:11 by abaioumy          #+#    #+#             */
-/*   Updated: 2021/12/05 18:02:11 by abaioumy         ###   ########.fr       */
+/*   Updated: 2021/12/08 17:26:11 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
+int	ft_putchar(int c)
 {
 	write (1, &c, 1);
 	return (1);

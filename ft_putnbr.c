@@ -6,7 +6,7 @@
 /*   By: abaioumy <abaioumy@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/04 12:35:18 by abaioumy          #+#    #+#             */
-/*   Updated: 2021/12/05 18:06:32 by abaioumy         ###   ########.fr       */
+/*   Updated: 2021/12/09 13:23:17 by abaioumy         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 int	ft_putnbr(int nb)
 {
-	int	nbr;
 	int	len;
 
 	len = 0;
@@ -23,15 +22,13 @@ int	ft_putnbr(int nb)
 		len += ft_putchar('-');
 		if (nb == -2147483648)
 		{
-			write(1, "2147483648", 10);
-			return (len + 10);
+			len += ft_putstr("2147483648");
+			return (len);
 		}		
-		nbr = nb * -1;
+		nb *= -1;
 	}
-	else
-		nbr = nb;
-	if (nbr >= 10)
-		len += ft_putnbr(nbr / 10);
-	len += ft_putchar(nbr % 10 + '0');
+	if (nb >= 10)
+		len += ft_putnbr(nb / 10);
+	len += ft_putchar(nb % 10 + '0');
 	return (len);
 }
