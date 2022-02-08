@@ -18,7 +18,7 @@
 # include <stdio.h>
 
 int	ft_printf(const char *str, ...);
-int	ft_putchar(int c);
+int	ft_putchar(char c);
 int	ft_putnbr(int nbr);
 int	ft_putnbr_unsigned(unsigned int nb);
 int	ft_hex_low(unsigned int n);
